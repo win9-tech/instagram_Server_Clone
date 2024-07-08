@@ -10,7 +10,7 @@ spring:
         highlight_sql: true
 
   datasource:
-    url: jdbc:mysql://localhost:3306
+    url: jdbc:mysql://localhost:3306/instagram_clone
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
