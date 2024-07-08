@@ -40,3 +40,15 @@ replay_pid*
 /.gradle/buildOutputCleanup/outputFiles.bin
 /build/tmp/compileJava/previous-compilation-data.bin
 /.gradle/8.8/fileHashes/resourceHashesCache.bin
+/build/tmp/compileJava/compileTransaction/stash-dir/CreateUserRequest.class.uniqueId6
+/build/tmp/compileJava/compileTransaction/stash-dir/CreateUserResponse$CreateUserResponseBuilder.class.uniqueId2
+/build/tmp/compileJava/compileTransaction/stash-dir/CreateUserResponse.class.uniqueId5
+/src/main/java/com/example/instagramclone/dto/response/CreateUserResponseDto.java
+/.gradle/file-system.probe
+/build/tmp/compileJava/compileTransaction/stash-dir/GlobalExceptionHandler.class.uniqueId4
+/.gradle/8.8/checksums/md5-checksums.bin
+/build/tmp/compileJava/compileTransaction/stash-dir/SecurityConfig.class.uniqueId1
+/.gradle/8.8/checksums/sha1-checksums.bin
+/build/tmp/compileJava/compileTransaction/stash-dir/UserController.class.uniqueId0
+/build/tmp/compileJava/compileTransaction/stash-dir/UserService.class.uniqueId7
+/build/tmp/compileJava/compileTransaction/stash-dir/UserServiceImpl.class.uniqueId3
