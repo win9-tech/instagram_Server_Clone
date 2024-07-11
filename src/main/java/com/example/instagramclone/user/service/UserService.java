@@ -1,6 +1,6 @@
-package com.example.instagramclone.service;
+package com.example.instagramclone.user.service;
 
-import com.example.instagramclone.dto.request.CreateUserRequestDto;
+import com.example.instagramclone.user.dto.request.CreateUserRequestDto;
 
 public interface UserService {
 

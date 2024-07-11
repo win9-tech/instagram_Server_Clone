@@ -1,6 +1,9 @@
-package com.example.instagramclone.entity;
+package com.example.instagramclone.user.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -15,12 +18,18 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String email;
+
+    private String fullName;
+
     private String username;
 
     private String password;
 
     @Builder
-    public User(String username, String password) {
+    public User(String email, String fullName, String username) {
+        this.email = email;
+        this.fullName = fullName;
         this.username = username;
     }
 

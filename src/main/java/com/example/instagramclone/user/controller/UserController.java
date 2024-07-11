@@ -1,8 +1,8 @@
-package com.example.instagramclone.controller;
+package com.example.instagramclone.user.controller;
 
-import com.example.instagramclone.dto.request.CreateUserRequestDto;
-import com.example.instagramclone.entity.User;
-import com.example.instagramclone.service.UserService;
+import com.example.instagramclone.user.dto.request.CreateUserRequestDto;
+import com.example.instagramclone.user.entity.User;
+import com.example.instagramclone.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/users")
 @RequiredArgsConstructor
 public class UserController {
 
