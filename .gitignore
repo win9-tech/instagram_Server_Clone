@@ -52,3 +52,6 @@ replay_pid*
 /build/tmp/compileJava/compileTransaction/stash-dir/UserController.class.uniqueId0
 /build/tmp/compileJava/compileTransaction/stash-dir/UserService.class.uniqueId7
 /build/tmp/compileJava/compileTransaction/stash-dir/UserServiceImpl.class.uniqueId3
+
+application.yml
+application-*.yml
