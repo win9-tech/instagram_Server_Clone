@@ -1,4 +1,4 @@
-package com.example.instagramclone.user.entity;
+package com.example.instagramclone.domain.user.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

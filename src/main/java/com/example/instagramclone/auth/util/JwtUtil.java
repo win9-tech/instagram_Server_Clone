@@ -56,7 +56,7 @@ public class JwtUtil {
     }
 
     public Long getUserId(String token) {
-        return parseClaims(token).get("memberId", Long.class);
+        return parseClaims(token).get("userId", Long.class);
     }
 
     public boolean validateToken(String token) {

@@ -3,8 +3,8 @@ package com.example.instagramclone.auth.service;
 import com.example.instagramclone.auth.util.JwtUtil;
 import com.example.instagramclone.auth.dto.CustomUserInfoDto;
 import com.example.instagramclone.auth.dto.LoginRequestDto;
-import com.example.instagramclone.user.entity.User;
-import com.example.instagramclone.user.repository.UserRepository;
+import com.example.instagramclone.domain.user.entity.User;
+import com.example.instagramclone.domain.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -28,8 +28,8 @@ public class AuthServiceImpl implements AuthService {
     public String login(LoginRequestDto request) throws UsernameNotFoundException, BadCredentialsException {
 
         User user = validateUser(request.getUsername(), request.getPassword());
-        CustomUserInfoDto info = CustomUserInfoDto.from(user);
-        return jwtUtil.createAccessToken(info);
+        CustomUserInfoDto customUserInfoDto = CustomUserInfoDto.from(user);
+        return jwtUtil.createAccessToken(customUserInfoDto);
     }
 
     private User validateUser(String username, String password) {

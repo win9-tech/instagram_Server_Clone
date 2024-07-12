@@ -1,6 +1,6 @@
-package com.example.instagramclone.user.dto.request;
+package com.example.instagramclone.domain.user.dto.request;
 
-import com.example.instagramclone.user.entity.User;
+import com.example.instagramclone.domain.user.entity.User;
 import lombok.Getter;
 
 @Getter

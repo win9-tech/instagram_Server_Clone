@@ -1,6 +1,6 @@
-package com.example.instagramclone.user.repository;
+package com.example.instagramclone.domain.user.repository;
 
-import com.example.instagramclone.user.entity.User;
+import com.example.instagramclone.domain.user.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

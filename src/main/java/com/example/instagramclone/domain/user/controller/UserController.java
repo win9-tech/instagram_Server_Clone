@@ -1,8 +1,8 @@
-package com.example.instagramclone.user.controller;
+package com.example.instagramclone.domain.user.controller;
 
-import com.example.instagramclone.user.dto.request.CreateUserRequestDto;
-import com.example.instagramclone.user.entity.User;
-import com.example.instagramclone.user.service.UserService;
+import com.example.instagramclone.domain.user.dto.request.CreateUserRequestDto;
+import com.example.instagramclone.domain.user.entity.User;
+import com.example.instagramclone.domain.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

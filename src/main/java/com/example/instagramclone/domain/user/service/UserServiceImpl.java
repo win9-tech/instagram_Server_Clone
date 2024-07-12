@@ -1,8 +1,8 @@
-package com.example.instagramclone.user.service;
+package com.example.instagramclone.domain.user.service;
 
-import com.example.instagramclone.user.dto.request.CreateUserRequestDto;
-import com.example.instagramclone.user.entity.User;
-import com.example.instagramclone.user.repository.UserRepository;
+import com.example.instagramclone.domain.user.dto.request.CreateUserRequestDto;
+import com.example.instagramclone.domain.user.entity.User;
+import com.example.instagramclone.domain.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
