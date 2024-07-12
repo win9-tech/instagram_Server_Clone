@@ -22,3 +22,7 @@ logging:
         type:
           descriptor:
             sql: trace
+
+jwt:
+  secret: Y293LWluc3RhZ3JhbS1jbG9uZS1zZWNyZXQta2V5LWVuY29kZQ==
+  expiration_time: 3600000
