@@ -7,7 +7,8 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 
 public interface PostService {
-    void createPost(CreatePostRequestDto createPostRequestDto, List<MultipartFile> imageList, String token);
 
-    void deletePost(DeletePostRequestDto deletePostRequestDto, String token);
+    void createPost(CreatePostRequestDto createPostRequestDto, List<MultipartFile> imageList);
+
+    void deletePost(DeletePostRequestDto deletePostRequestDto);
 }

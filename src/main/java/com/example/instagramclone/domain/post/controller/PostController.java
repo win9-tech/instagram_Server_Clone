@@ -21,19 +21,17 @@ public class PostController {
     @PostMapping
     public ResponseEntity<Void> createPost(
             @RequestPart("data") CreatePostRequestDto createPostRequestDto,
-            @RequestPart("files") List<MultipartFile> imageList,
-            @RequestAttribute("token") String token){
+            @RequestPart("files") List<MultipartFile> imageList){
 
-        postService.createPost(createPostRequestDto, imageList, token);
+        postService.createPost(createPostRequestDto, imageList);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @DeleteMapping
     public ResponseEntity<Void> deletePost(
-            @RequestBody DeletePostRequestDto deletePostRequestDto,
-            @RequestAttribute("token") String token){
+            @RequestBody DeletePostRequestDto deletePostRequestDto){
 
-        postService.deletePost(deletePostRequestDto, token);
+        postService.deletePost(deletePostRequestDto);
         return new ResponseEntity<> (HttpStatus.NO_CONTENT);
     }
 }
