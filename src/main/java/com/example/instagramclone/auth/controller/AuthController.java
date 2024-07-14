@@ -21,7 +21,7 @@ public class AuthController {
 
     @PostMapping
     public ResponseEntity<?> authenticateUser(@RequestBody final LoginRequestDto request) throws UsernameNotFoundException, BadCredentialsException {
-        String token = this.authService.login(request);
+        String token = authService.login(request);
         return ResponseEntity.status(HttpStatus.OK).body(token);
     }
 }
