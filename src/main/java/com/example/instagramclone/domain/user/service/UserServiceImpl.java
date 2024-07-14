@@ -16,20 +16,23 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void createUser(CreateUserRequestDto createUserRequestDto) throws IllegalAccessException {
+        validateEmail(createUserRequestDto.getEmail());
+        validateUsername(createUserRequestDto.getUsername());
 
-        String email = createUserRequestDto.getEmail();
-        String username = createUserRequestDto.getUsername();
-        String password = createUserRequestDto.getPassword();
+        User user = createUserRequestDto.toEntity();
+        user.setPassword(passwordEncoder.encode(createUserRequestDto.getPassword()));
+        userRepository.save(user);
+    }
 
+    private void validateEmail(String email) throws IllegalAccessException {
         if (userRepository.existsByEmail(email)) {
             throw new IllegalAccessException("사용할 수 없는 email 입니다.");
         }
-        if (userRepository.existsByUsername(username)) {
+    }
+
+    private void validateUsername(String username) throws IllegalAccessException {
+        if (userRepository.existsByUsername(username)){
             throw new IllegalAccessException("사용할 수 없는 username 입니다.");
         }
-        User user = createUserRequestDto.toEntity();
-        String encodedPassword = passwordEncoder.encode(password);
-        user.setPassword(encodedPassword);
-        userRepository.save(user);
     }
 }
