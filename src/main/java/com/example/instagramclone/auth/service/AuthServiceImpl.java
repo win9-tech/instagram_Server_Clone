@@ -32,7 +32,6 @@ public class AuthServiceImpl implements AuthService {
     }
 
     private User validateUser(String username, String password) {
-
         User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException(USER_NOT_FOUND_MESSAGE));
 

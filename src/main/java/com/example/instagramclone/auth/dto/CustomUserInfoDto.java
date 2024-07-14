@@ -8,11 +8,11 @@ import lombok.Getter;
 @Getter
 public class CustomUserInfoDto{
 
-    private final Long userId;
-    private final String email;
-    private final String fullName;
-    private final String username;
-    private final String password;
+    private Long userId;
+    private String email;
+    private String fullName;
+    private String username;
+    private String password;
 
     public static CustomUserInfoDto from(User user) {
         return CustomUserInfoDto.builder()
