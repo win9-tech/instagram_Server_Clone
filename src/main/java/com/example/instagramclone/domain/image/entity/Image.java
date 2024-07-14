@@ -2,9 +2,11 @@ package com.example.instagramclone.domain.image.entity;
 
 import com.example.instagramclone.domain.post.entity.Post;
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Getter
 @NoArgsConstructor
 public class Image {
 

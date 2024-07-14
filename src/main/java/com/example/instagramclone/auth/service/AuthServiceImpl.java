@@ -24,7 +24,6 @@ public class AuthServiceImpl implements AuthService {
     private static final String USER_NOT_FOUND_MESSAGE = "존재하지 않는 username 입니다.";
     private static final String INCORRECT_PASSWORD_MESSAGE = "비밀번호가 일치하지 않습니다.";
 
-    @Override
     public String login(LoginRequestDto request) throws UsernameNotFoundException, BadCredentialsException {
 
         User user = validateUser(request.getUsername(), request.getPassword());

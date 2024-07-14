@@ -1,4 +1,4 @@
-package com.example.instagramclone.config.security;
+package com.example.instagramclone.config;
 
 import com.example.instagramclone.auth.service.CustomUserDetailsService;
 import com.example.instagramclone.auth.filter.JwtAuthFilter;

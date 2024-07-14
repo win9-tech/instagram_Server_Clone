@@ -1,4 +1,4 @@
-package com.example.instagramclone.config.aws;
+package com.example.instagramclone.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;

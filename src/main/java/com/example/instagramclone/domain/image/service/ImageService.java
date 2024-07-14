@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface ImageService {
     void uploadAndCreateImages(List<MultipartFile> imageList, Post post);
+
+    void deleteImage(Long postId);
 }

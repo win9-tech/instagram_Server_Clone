@@ -1,5 +1,6 @@
 package com.example.instagramclone.domain.post.entity;
 
+import com.example.instagramclone.domain.image.entity.Image;
 import com.example.instagramclone.domain.user.entity.User;
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
@@ -8,6 +9,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -33,6 +36,9 @@ public class Post {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
+
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Image> images = new ArrayList<>();
 
     @PrePersist
     protected void onCreate() {

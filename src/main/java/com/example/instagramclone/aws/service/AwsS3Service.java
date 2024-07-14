@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.services.s3.model.DeleteObjectRequest;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 import software.amazon.awssdk.services.s3.model.GetUrlRequest;
 import software.amazon.awssdk.core.sync.RequestBody;
@@ -50,6 +51,23 @@ public class AwsS3Service {
                 .build();
 
         return s3Client.utilities().getUrl(getUrlRequest).toString();
+    }
+
+    public void deleteFile(String fileUrl) {
+        String key = fileUrl.substring(fileUrl.lastIndexOf("/") + 1);
+
+        try {
+            DeleteObjectRequest deleteObjectRequest = DeleteObjectRequest.builder()
+                    .bucket(bucketName)
+                    .key(key)
+                    .build();
+
+            s3Client.deleteObject(deleteObjectRequest);
+            log.info("File deleted successfully from S3: {}", key);
+        } catch (Exception e) {
+            log.error("Error occurred while deleting file from S3", e);
+            throw new RuntimeException("Failed to delete file from S3", e);
+        }
     }
 
     public String getFileName(MultipartFile multipartFile) {

@@ -1,6 +1,7 @@
 package com.example.instagramclone.domain.post.controller;
 
 import com.example.instagramclone.domain.post.dto.request.CreatePostRequestDto;
+import com.example.instagramclone.domain.post.dto.request.DeletePostRequestDto;
 import com.example.instagramclone.domain.post.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -21,9 +22,18 @@ public class PostController {
     public ResponseEntity<Void> createPost(
             @RequestPart("data") CreatePostRequestDto createPostRequestDto,
             @RequestPart("files") List<MultipartFile> imageList,
-            @RequestHeader("Authorization") String token){
+            @RequestAttribute("token") String token){
 
         postService.createPost(createPostRequestDto, imageList, token);
         return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+    @DeleteMapping
+    public ResponseEntity<Void> deletePost(
+            @RequestBody DeletePostRequestDto deletePostRequestDto,
+            @RequestAttribute("token") String token){
+
+        postService.deletePost(deletePostRequestDto, token);
+        return new ResponseEntity<> (HttpStatus.NO_CONTENT);
     }
 }
