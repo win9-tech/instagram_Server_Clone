@@ -46,6 +46,11 @@ public class PostServiceImpl implements PostService {
         postRepository.delete(post);
     }
 
+    @Override
+    public List<Long> getPostIdByUserId(Long id) {
+        return postRepository.findIdsByUserId(id);
+    }
+
     private User getAuthenticationUser(){
         Long userId = authenticationService.getAuthenticatedId();
         return userRepository.findById(userId).orElseThrow(() -> new EntityNotFoundException("User not found"));
