@@ -1,8 +1,8 @@
 package com.example.instagramclone.domain.post.entity;
 
+import com.example.instagramclone.domain.comment.entity.Comment;
 import com.example.instagramclone.domain.image.entity.Image;
 import com.example.instagramclone.domain.user.entity.User;
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
@@ -29,7 +29,6 @@ public class Post {
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
-    @Nullable
     @Column(name = "update_at")
     private LocalDateTime updatedAt;
 
@@ -39,6 +38,9 @@ public class Post {
 
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Image> images = new ArrayList<>();
+
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Comment> comments = new ArrayList<>();
 
     @PrePersist
     protected void onCreate() {

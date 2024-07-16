@@ -28,7 +28,7 @@ public class PostController {
     }
 
     @DeleteMapping
-    public ResponseEntity<Void> deletePost(DeletePostRequestDto deletePostRequestDto){
+    public ResponseEntity<Void> deletePost(@RequestBody final DeletePostRequestDto deletePostRequestDto){
         postService.deletePost(deletePostRequestDto);
         return new ResponseEntity<> (HttpStatus.NO_CONTENT);
     }
