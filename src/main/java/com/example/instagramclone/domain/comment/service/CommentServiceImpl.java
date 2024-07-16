@@ -33,6 +33,12 @@ public class CommentServiceImpl implements CommentService {
         commentRepository.save(comment);
     }
 
+    @Override
+    public void deleteComment(Long postId, Long commentId) {
+        Comment comment = findCommentByIdAndPostId(postId, commentId);
+        commentRepository.delete(comment);
+    }
+
     private User getAuthenticationUser(){
         Long userId = authenticationService.getAuthenticatedId();
         return userRepository.findById(userId).orElseThrow(() -> new EntityNotFoundException("User not found"));
@@ -41,5 +47,10 @@ public class CommentServiceImpl implements CommentService {
     private Post getPostById(Long postId){
         return postRepository.findById(postId).orElseThrow(()
                 -> new EntityNotFoundException("Post not found"));
+    }
+
+    private Comment findCommentByIdAndPostId(Long postId, Long commentId){
+        return commentRepository.findByIdAndPostId(commentId, postId)
+                .orElseThrow(() -> new EntityNotFoundException("Comment not found in this post"));
     }
 }
